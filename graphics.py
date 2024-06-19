@@ -36,12 +36,13 @@ class Point:
 
 class Line:
 
-    def __init__(self, point1, point2):
+    def __init__(self, point1, point2, width= 2):
         self.p1 = point1
         self.p2 = point2
+        self.width = width
 
     def draw(self, canvas, color="black"):       
-        canvas.create_line( self.p1.x, self.p1.y, self.p2.x, self.p2.y, fill=color, width=2)
+        canvas.create_line( self.p1.x, self.p1.y, self.p2.x, self.p2.y, fill=color, width=self.width)
 
     def __str__(self):
         return f"p1 = {self.p1.x},{self.p1.y} p2={self.p2.x},{self.p2.y}"

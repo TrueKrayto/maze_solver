@@ -13,6 +13,7 @@ class Cell:
         self._y2 = None
         self._win =  win
         self.visited = False
+        self.goal = False
         
     def center_finder(self):
         if self._x1:
@@ -62,9 +63,11 @@ class Cell:
         if start and finish:
             start_point = Point(start[0], start[1])
             finish_point = Point(finish[0], finish[1])
-            path = Line(start_point, finish_point)
+            path = Line(start_point, finish_point, 4)
             if undo:
                 self._win.draw_line(path, "gray")
             else:
                 self._win.draw_line(path, "red")
+
+
 
