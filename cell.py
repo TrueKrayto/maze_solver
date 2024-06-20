@@ -16,13 +16,12 @@ class Cell:
         self.goal = False
         
     def center_finder(self):
-        if self._x1:
-            if self._x2:
-                if self._y1:
-                    if self._y2:
-                        return ((self._x1 + self._x2)/2, (self._y1 + self._y2)/2)
+        # Check if all necessary attributes are present
+        if all([self._x1, self._x2, self._y1, self._y2]):
+            # Calculate and return the center point
+            return ((self._x1 + self._x2) / 2, (self._y1 + self._y2) / 2)
         return None
-                
+              
     def draw(self, x1, y1, x2, y2):
         self._x1 = x1
         self._x2 = x2
