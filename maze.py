@@ -1,4 +1,5 @@
 from cell import Cell
+from tkinter import Button
 from graphics import Window
 import time, random
 import sys
@@ -16,7 +17,8 @@ class Maze:
         self.cells = []
         self.seed = seed
         if not self.seed:
-            random.seed(self.seed)
+            random.seed(self.seed) 
+        self.win.butt_handler("solve", self.solve)    
           
     def create_cells(self):
         if self.win == None:
@@ -132,7 +134,7 @@ class Maze:
             for j in range(len(self.cells[0])):
                 self.cells[i][j].visited = False       
 
-    def solve(self):
+    def solve(self):  
         return self._solve_r(0,0)
     
     def _solve_r(self, col, row):

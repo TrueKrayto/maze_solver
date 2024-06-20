@@ -17,7 +17,7 @@ def main():
     # maze args (x1, y1, rows, cols, cell size x, cell size y, window)
     maze = Maze(*params, win,)
     maze.create_cells()
-    maze.solve()
+    
 
     # wait for close starts the loop
     win.wait_for_close()

@@ -1,4 +1,4 @@
-from tkinter import Tk, BOTH, Canvas
+from tkinter import Tk, BOTH, Canvas, Button
 
 class Window:
 
@@ -11,8 +11,8 @@ class Window:
         self.__canvas = Canvas(self.__root, width=width, height=height, background="White")
         self.__canvas.pack()
         self.running = False
-        self.__root.protocol("WM_DELETE_WINDOW", self.close)
-
+        self.__root.protocol("WM_DELETE_WINDOW", self.close)  
+         
     def redraw(self):
         self.__root.update()
         self.__root.update_idletasks()
@@ -27,6 +27,10 @@ class Window:
 
     def draw_line(self, line, color="black"):
         line.draw(self.__canvas, color)
+
+    def butt_handler(self, text, func):
+        self.solve_butt = Button(self.__root, text=text, command=func)
+        self.solve_butt.pack() 
 
 class Point:
     
